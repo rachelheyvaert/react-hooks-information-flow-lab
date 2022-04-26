@@ -1,22 +1,18 @@
-import React, { useState } from "react";
-import Item from "./Item";
+import React from "react";
 
-function Header({ onDarkModeClick }) {
+function Header({ isDarkMode, onDarkModeClick }) {
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    function handleDarkModeClick() {
-      setIsDarkMode((isDarkMode) => !isDarkMode);
     return (
-        <header>
+        <div>
         <h2>Shopster</h2>
-        <button onClick={handleDarkModeClick}>
+        <button 
+        onClick={onDarkModeClick}>
           {isDarkMode ? "Dark" : "Light"} Mode
         </button>
-       </header>
+       </div>
 
     )
 }
-}
+
 
 export default Header;
